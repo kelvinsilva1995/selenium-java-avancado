@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"json:target/reports/cucumberTests.json", "html:target/cucumber/report.html"},
         features = "src/test/resources/features",
-        tags = "@cadastro_usuario_sucesso",
+        tags = "@login",
         glue = {"steps"}
 
 )
