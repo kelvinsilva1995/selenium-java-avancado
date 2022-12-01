@@ -14,4 +14,18 @@ public class Commands extends RunCucumber {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public static void clickElement(By element){
+        System.out.println("########################################");
+        try {
+            System.out.println("Vai clicar no elemento: " + element);
+            waitElementBeClickable(element, 10);
+            getDriver().findElement(element).click();
+            System.out.println("Clicou no elemento: " + element);
+        }catch (Exception error){
+            System.out.println("********Aconteceu um erro ao tentar clicar no elemento: " + element);
+            new Exception(error);
+        }
+        System.out.println("########################################");
+    }
+
 }

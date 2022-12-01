@@ -8,6 +8,8 @@ import pages.CadastroUsuarioPage;
 import pages.LoginPage;
 import runner.RunCucumber;
 
+import static support.Utils.getRandomEmail;
+
 public class CadastroUsuarioSteps extends RunCucumber {
 
     LoginPage loginPage = new LoginPage();
@@ -22,7 +24,7 @@ public class CadastroUsuarioSteps extends RunCucumber {
     @Dado("^preencho todos os campos obrigatórios$")
     public void preencho_campos_obrigatorios() {
         cadastroPage.preencheNome("Eduardo");
-        cadastroPage.preencheEmail("dudu@gmail.com");
+        cadastroPage.preencheEmail(getRandomEmail());
         cadastroPage.preencherSenha("1234567");
     }
 
