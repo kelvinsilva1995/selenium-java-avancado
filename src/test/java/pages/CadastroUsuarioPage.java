@@ -4,6 +4,9 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import runner.RunCucumber;
 
+import static support.Commands.clickElement;
+import static support.Commands.fillField;
+
 public class CadastroUsuarioPage extends RunCucumber {
 
     // elementos
@@ -13,19 +16,19 @@ public class CadastroUsuarioPage extends RunCucumber {
     private By botaoFazerCadastro= By.id("btnRegister");
 
     // ações / funções / métodos
-    public void preencheNome(String email){
-         getDriver().findElement(campoNome).sendKeys(email);
+    public void preencheNome(String nome){
+        fillField(campoNome, nome);
     }
     public void preencheEmail(String email){
-         getDriver().findElement(campoEmail).sendKeys(email);
+        fillField(campoEmail,email);
     }
 
     public void preencherSenha(String senha){
-        getDriver().findElement(campoSenha).sendKeys(senha);
+        fillField(campoSenha,senha);
     }
 
     public void cadastrarUsuario(){
-        getDriver().findElement(botaoFazerCadastro).click();
+        clickElement(botaoFazerCadastro);
     }
 
     public void verificaCadastroSucesso(){
