@@ -39,14 +39,11 @@ public class LoginPage extends RunCucumber {
     }
 
     public void verificaLoginSucesso(){
-        waitElementBeVisible(By.id("swal2-title"), 10);
-        String textoLoginSucesso = getDriver().findElement(By.id("swal2-title")).getText();
-        Assert.assertEquals("Os textos não são iguais!", "Login realizado", textoLoginSucesso);
+        checkMessage(By.id("swal2-title"),"Login realizado");
     }
 
     public void verificaCampoVazio(String message){
-        String textError = getDriver().findElement(By.className("invalid_input")).getText();
-        Assert.assertEquals(message, textError);
+        checkMessage(By.className("invalid_input"),message);
     }
 
     public void acessarTelaCadastro(){
