@@ -1,7 +1,6 @@
 name: Smoke Tests
-on:
+'on':
   push:
-  pull_request:
     branches:
       - master
 jobs:
@@ -20,11 +19,11 @@ jobs:
         uses: browser-actions/setup-chrome@latest
       - name: instalar chromedriver
         uses: nanasess/setup-chromedriver@v1
-      - run: |
+        run: |
           export DISPLAY=:99
           chromedriver --url-base=/wd/hub &
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
       - name: Run Test
-      - run: mvn test -Dtest=RunCucumber -Dbrowser=chrome-ci
+        run: mvn test -Dtest=RunCucumber -Dbrowser=chrome-ci
       - name: gerar relatorio
-      - run: 'mvn cluecumber-report:reporting'
+        run: 'mvn cluecumber-report:reporting'
