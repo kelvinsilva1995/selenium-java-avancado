@@ -17,3 +17,16 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/kelvinsilva1995/selenium-java-avancado.git
 git push -u origin main
+
+
+Execução dos Testes
+
+mvn test -Dtest=RunCucumber -Dbrowser=chrome
+
+Gerar relatorio apos execução
+
+mvn cluecumber-report:reporting
+
+Rodar no CI
+
+mvn test -Dtest=RunCucumber -Dbrowser=chrome-ci cluecumber-report:reporting

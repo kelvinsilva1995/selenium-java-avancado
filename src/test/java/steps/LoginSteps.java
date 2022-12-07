@@ -1,10 +1,13 @@
 package steps;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 import pages.LoginPage;
 import runner.RunCucumber;
+import support.ScreenshotUtils;
 
 public class LoginSteps extends RunCucumber {
 
@@ -51,5 +54,8 @@ public class LoginSteps extends RunCucumber {
         loginPage.clicarLogin();
         loginPage.verificaLoginSucesso();
     }
-
+    @After
+    public static void  takeScreenshot(Scenario scenario){
+        ScreenshotUtils.addScreenshotOnScenario(scenario);
+    }
 }
