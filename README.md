@@ -34,3 +34,7 @@ mvn test -Dtest=RunCucumber -Dbrowser=chrome-ci cluecumber-report:reporting
 Criar nova branch
 
 git checkout -b feature/nome-branch~~
+
+Rodar com Tags
+
+mvn test -Dtest=RunCucumber -Dbrowser=chrome-ci -Dcucumber.options="--tags @cadastro_de_usuario"
